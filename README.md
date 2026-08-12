@@ -2,7 +2,7 @@
 
 Backend API para o Oracle Cards Viewer, construído com Symfony 6.4 e arquitetura hexagonal.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Iniciar Desenvolvimento (API + Frontend)
 
@@ -20,7 +20,7 @@ Isso irá iniciar:
 php -S localhost:8000 -t public
 ```
 
-## 📦 Instalação
+## Instalação
 
 ```bash
 # Instalar dependências
@@ -34,7 +34,7 @@ cp .env .env.local
 ./start-dev.sh
 ```
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 Este projeto segue a **Arquitetura Hexagonal** (Ports & Adapters):
 
@@ -71,7 +71,7 @@ src/Core/
     └── TradeHelper.php
 ```
 
-## 📚 Documentação
+## Documentação
 
 - **[DEV_GUIDE.md](DEV_GUIDE.md)** - Guia completo de desenvolvimento
 - **[CORE_EXAMPLES.md](CORE_EXAMPLES.md)** - Exemplos de uso do CORE
@@ -115,7 +115,7 @@ src/Core/
 - **BaseApiController**: Controller base com helpers
 - **ApiResponse**: Formatador de respostas padronizadas
 
-## 🔧 Configuração
+##  Configuração
 
 Todas as configurações estão em `config.php`:
 
@@ -131,7 +131,7 @@ return [
 ];
 ```
 
-## 🧪 Testes
+## Testes
 
 ```bash
 # Executar testes
@@ -154,7 +154,7 @@ php bin/phpunit --coverage-html coverage
 ### OCR
 - `POST /api/ocr/scan` - Escanear card por imagem
 
-## 🤝 Contribuindo
+## Contribuindo
 
 1. Fork o projeto
 2. Crie uma branch (`git checkout -b feature/AmazingFeature`)
@@ -162,17 +162,9 @@ php bin/phpunit --coverage-html coverage
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📄 Licença
-
-MIT License - veja [LICENSE](LICENSE) para detalhes
-
-## 🙏 Agradecimentos
+##  Agradecimentos
 
 - Symfony Framework
 - Scryfall API
-- Pokémon TCG API
-- Todos os contribuidores
 
 ---
-
-**Desenvolvido com ❤️ para colecionadores de cards**
