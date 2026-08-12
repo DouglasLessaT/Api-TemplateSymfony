@@ -1,0 +1,37 @@
+parameters:
+    jwt.secret_key: '%env(JWT_SECRET_KEY)%'
+    jwt.algorithm: 'HS256'
+    jwt.expiration_time: 3600
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        bind:
+            $projectDir: '%kernel.project_dir%'
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    App\Service\:
+        resource: '../src/Service/'
+
+    App\Repositories\:
+        resource: '../src/Repositories/'
+
+    # JWT Manager
+    App\Core\Infrastructure\Security\JWTManager:
+        arguments:
+            $secretKey: '%jwt.secret_key%'
+            $algorithm: '%jwt.algorithm%'
+            $expirationTime: '%jwt.expiration_time%'
+
+    # Database Setup Listener - Configura banco automaticamente
+    App\Core\Infrastructure\Database\DatabaseSetupListener:
+        tags:
+            - { name: kernel.event_subscriber }
+
